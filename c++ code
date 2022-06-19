@@ -1,0 +1,25 @@
+class Solution{
+    public:
+    vector<int> preOrder(Node* root){
+      vector<int>v; 
+     if(root==NULL)return v;
+     
+    stack<Node*>st;
+    
+   st.push(root);
+   
+   while(!st.empty()){
+       
+       Node* temp=st.top();
+       st.pop();
+       v.push_back(temp->data);
+     if(temp->right)st.push(temp->right);  
+     if(temp->left)st.push(temp->left);
+   }
+    
+   return v;    
+       
+       
+       
+    }
+};
